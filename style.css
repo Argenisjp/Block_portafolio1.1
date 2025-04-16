@@ -1,12 +1,47 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* animacionaes */
+
+.main .section_info,
+.main .section_img {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+}
+
+.main .section_info {
+    animation-delay: 0.5s;
+}
+
+.main .section_img {
+    animation-delay: 1s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 body{
     background-color: rgb(67, 79, 103);
     color: #fff;
+    opacity: 0;
+    animation: fadeBody 1.5s ease forwards;
+
+    
+}
+
+@keyframes fadeBody {
+    to {
+        opacity: 1;
+    }
 }
 
 .container{
@@ -117,8 +152,16 @@ header .navbar nav ul li:hover{
     border: 2px solid  rgb(129, 209, 241);
 }
 
+.main .section_info button:hover {
+    background-color: rgb(129, 209, 241);
+    color: #000;
+    transition: 0.3s ease;
+}
+
 .iconos{
     margin-top: 100px;
+    display: flex;
+    gap: 20px;
 }
 
 .iconos a{
@@ -127,6 +170,30 @@ header .navbar nav ul li:hover{
     border: 2px solid rgb(129, 209, 241);
     padding: 10px;
     border-radius: 50%;
+    transition: all 500ms;
+}
+
+.iconos .facebook:hover{
+    scale: 1.25;
+    /* border: 2px solid #1877f2; */
+    color: #1877f2;
+}
+.iconos .whatsapp:hover{
+    scale: 1.25;
+    /* border: 2px solid #25d366; */
+    color: #25d366;
+}
+
+.iconos .linkedin-in:hover{
+    scale: 1.25;
+    /* border: 2px solid #25d366; */
+    color: #0077B5;
+}
+
+.iconos .github:hover{
+    scale: 1.25;
+    /* border: 2px solid #25d366; */
+    color: #fafafa;
 }
 
 .main .section_img {
@@ -160,3 +227,85 @@ header .navbar nav ul li:hover{
     }
   }
 
+
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .main {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 0;
+        text-align: center;
+    }
+
+    .main .section_info {
+        width: 100%;
+    }
+
+    .main .section_img {
+        width: 400px;
+        height: 400px;
+        margin-top: 2rem;
+    }
+
+    .main .section_img .img_perfil {
+        background-size: cover;
+    }
+
+    .iconos {
+        justify-content: center;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+    }
+
+    header .navbar nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    header .navbar nav ul li a {
+        margin: 10px 0;
+    }
+
+    .main .section_info h1,
+    .main .section_info h2 {
+        font-size: 35px;
+    }
+
+    .main .section_info p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .main .section_info button {
+        display: block;
+        margin: 10px auto;
+    }
+
+    .main .section_img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .iconos {
+        margin-top: 50px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .iconos a {
+        font-size: 20px;
+        padding: 8px;
+    }
+}
