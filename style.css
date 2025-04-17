@@ -44,7 +44,7 @@ body{
     }
 }
 
-.container{
+.contenedor{
     /* border: 1px solid; */
     height: 80vh;
     width: 100%;
@@ -230,7 +230,7 @@ header .navbar nav ul li:hover{
 
 /* Responsive para tablets */
 @media (max-width: 1024px) {
-    .container {
+    .contenedor {
         padding: 0 30px;
     }
 
