@@ -5,7 +5,7 @@ function enviarMensajeWhatsApp(event) {
     const email = document.getElementById("email").value;
     const mensaje = document.getElementById("mensaje").value;
 
-    const texto = `Hola, soy ${nombre} (${email}). ${mensaje}`;
+    const texto = `Hola Argenis José 👋, soy ${nombre} (${email}). Quería decirte:\n\n${mensaje}`;
     const url = `https://wa.me/573209872010?text=${encodeURIComponent(texto)}`;
 
     window.open(url, "_blank");
